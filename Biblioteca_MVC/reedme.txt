@@ -1,0 +1,41 @@
+El proyecto *Biblioteca_MVC* parece seguir el patrón Modelo-Vista-Controlador (MVC). Aquí está un análisis inicial de los archivos principales encontrados:
+
+1. **leeMe.txt y README.md**  
+   - Probablemente contienen información sobre el uso y configuración del sistema.
+
+2. **libros.sql**  
+   - Un archivo SQL que seguramente contiene la estructura y/o datos de la base de datos de la biblioteca.
+
+3. **app/inicio.php**  
+   - Parece ser el punto de entrada principal de la aplicación.
+
+4. **Carpeta app/controladores/**  
+   - **Libros.php** y **Unlibro.php**  
+     - Controladores que gestionan la lógica relacionada con los libros.
+
+5. **Carpeta app/libs/**  
+   - **Control.php y Controlador.php**  
+     - Posiblemente clases base para la gestión de controladores.
+Archivos principales
+
+1. **app/inicio.php**  
+   - Es el punto de entrada del sistema.  
+   - Carga clases esenciales en memoria, como la base de datos (MySQLdb), controladores y un gestor de rutas (Control).
+
+2. **app/controladores/Libros.php**  
+   - Es un controlador que gestiona la lógica de los libros.  
+   - Usa un modelo (LibrosModelo) para obtener datos de los libros.  
+   - Su método index() recupera todos los libros y los envía a la vista LibrosVista.
+
+3. **app/controladores/Unlibro.php**  
+   - Similar al anterior, pero enfocado en un solo libro.  
+   - Su método index($id) obtiene la información de un libro específico mediante UnlibroModelo.
+
+4. **app/libs/Control.php**  
+   - Maneja las URLs y define qué controlador, método y parámetros se usan.  
+   - Si la URL especifica un controlador válido, lo carga dinámicamente.
+
+5. **app/libs/Controlador.php**  
+   - Es una clase base para los controladores.  
+   - Tiene métodos para cargar modelos (modelo()) y vistas (vista()).  
+   - Facilita la generación de objetos a partir de los modelos.
